@@ -5,7 +5,7 @@ Revelations.sh es el script que he desarrollado para tener un recurso que de for
 
 Mis objetivos a la hora de programar este script eran:
 
-Crear una serie de puertas traseras recíprocas
+Crear una serie de puertas traseras redundantes.
 
 
 Crear un agente que contrarreste la posible eliminación de estas.
@@ -30,7 +30,7 @@ Además, en cron.d creamos un trabajo que se ejecuta cada hora, y que también r
 
 
 
-PERSISTENCIA
+# PERSISTENCIA
 
 Las capacidades de persistencia de este script están divididas en varias puertas traseras:
 
@@ -44,3 +44,10 @@ Se inserta una shell inversa en la configuración de bash.bashrc, para que cada 
 
 
 En la configuración de sudo.conf, se redirige el archivo sudoers a uno que hemos modificado dentro de nuestro rootkit. Esto cambia la configuración, dado que normalmente la mayoría de usuarios de servicio solo pueden hacer sudo en comandos limitados. Ahora, todos los sudoers pueden hacer sudo en todos los comandos. Esto nos permite, en caso de reparación del resto de puertas traseras, volver a escalar privilegios.
+
+
+# Próximos cambios
+
+- Corromper las funciones de grep y find.
+
+- Añadir sección de limpieza de huellas.
